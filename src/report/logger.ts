@@ -1,12 +1,12 @@
-import pino, { Logger } from "pino";
-import { Config } from "../conf";
+
+import * as pino from "node_modules/pino/pino";
+import { Logger } from "node_modules/pino/pino";
+import { Config } from "@app/conf";
 import fs from "fs";
 
 let logger: undefined | Logger = undefined;
 export function getLogger(): Logger {
-  if (!logger) {
-    throw new Error("Logger not initialized");
-  }
+  if (!logger) throw new Error("Logger not initialized");
 
   return logger;
 }
@@ -26,8 +26,9 @@ export function initLogger(args: Config): Logger {
       options: { destination: args.logPath },
     });
   }
+  
 
-  logger = pino(
+  logger = pino.pino(
     {
       level: args.logLevel || process.env.PINO_LEVEL || "warn",
     },

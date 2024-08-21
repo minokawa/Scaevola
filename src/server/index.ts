@@ -1,6 +1,6 @@
 import ws from "ws";
-import { getConfig } from "../conf";
-import { getLogger, initLogger } from "../report/logger";
+import { getConfig } from "@app/conf";
+import { getLogger, initLogger } from "@report/logger";
 
 const args = getConfig();
 initLogger(args);
