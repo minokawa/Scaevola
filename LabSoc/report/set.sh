@@ -12,3 +12,4 @@ echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *
 sudo apt update && sudo apt install glow
 
 
+apt install tmux
